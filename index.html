@@ -2,33 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beso Shop</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+  <title>Landing Completa - Beso Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    * {
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    .slider {
-      height: 100vh;
-      scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e5e6fa, #f3c6e2, #fbe2f4);
+      scroll-snap-type: y mandatory;
       overflow-y: scroll;
     }
 
-    .slide {
+    section {
       height: 100vh;
       scroll-snap-align: start;
       background-size: cover;
@@ -37,65 +27,170 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
       position: relative;
+      padding: 40px 20px;
+      box-sizing: border-box;
     }
 
-    .slide-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
+    main {
+      height: 100vh;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      overflow-y: scroll;
     }
 
-    .slide h1 {
-      font-size: 3em;
-      font-weight: bold;
-      color: #FFABAB;
+    .section-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .text-content h3 {
+      font-weight: 300;
+      font-size: 2.5rem;
       margin-bottom: 10px;
-      animation: fadeIn 1.5s ease-in-out;
+      color: #2b002d;
     }
 
-    .slide p {
-      font-size: 1.2em;
-      animation: fadeIn 2s ease-in-out;
+    .text-content h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #2b002d;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .text-content p {
+      font-weight: 400;
+      font-size: 2.5rem;
+      color: #2b002d;
     }
 
-    .cta-fixed-button {
+    .image-container {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-container img {
+      max-width: 80%;
+      border-radius: 16px;
+      height: auto;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .image-row img {
+      width: 300px;
+      border-radius: 20px;
+    }
+
+    .footer-icons {
+      margin-top: 10px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-icons a {
+      font-size: 1.2rem;
+      color: #2b002d;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-icons i {
+      font-size: 1.4rem;
+    }
+
+    .fixed-button {
       position: fixed;
-      bottom: 30px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #FFABAB, #FCC8D1);
-      color: #fff;
-      padding: 14px 28px;
+      background: linear-gradient(135deg, #FF0000, #FF0000);
+      color: white;
+      font-weight: 700;
+      font-size: 2.1rem;
+      padding: 14px 32px;
       border-radius: 12px;
-      font-size: 2em;
-      font-weight: bold;
+      box-shadow: 0 0 25px #FF0000;
       text-decoration: none;
-      box-shadow: 0 0 15px #D14D72;
       z-index: 999;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s ease;
     }
-    
-    .cta-fixed-button:hover {
+
+    .fixed-button:hover {
       transform: translateX(-50%) scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 220, 0, 1);
+      box-shadow: 0 0 35px #FF0000;
     }
+
     @media (max-width: 768px) {
-      .slide h1 {
-        font-size: 2em;
+      .section-container {
+        flex-direction: column;
+        text-align: center;
       }
 
-      .cta-fixed-button {
-        font-size: 0.9em;
+      .image-container {
+        margin-top: 30px;
+      }
+
+      .text-content h1 {
+        font-size: 2rem;
+      }
+
+      .text-content h3,
+      .text-content p {
+        font-size: 1.2rem;
+      }
+
+      .image-row img {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .fixed-button {
+        font-size: 2.5rem;
         padding: 12px 24px;
-        bottom: 20px;
-        right: 20px;
+        width: 266px;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .text-content h1 {
+        font-size: 1.6rem;
+      }
+
+      .text-content p {
+        font-size: 1rem;
+      }
+
+      .text-content h3 {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 20px;
       }
     }
   </style>
@@ -110,80 +205,99 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2379103259124147'); // Reemplazar con tu Pixel ID
+    fbq('init', '2379103259124147');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" src="https://www.facebook.com/tr?id=2379103259124147&ev=PageView&noscript=1"/>
   </noscript>
-
 </head>
 <body>
+  <main>
+    <section>
+      <div class="section-container">
+        <div class="text-content">
+          <h3>TODOS SOBRE NOSOTROS</h3>
+          <h1>DESCUBRÍ LO QUE BESO SHOP TIENE PARA VOS</h1>
+          <p>TU PLACER Y EL NUESTRO VAN DE LA MANO</p>
+        </div>
+        <div class="image-container">
+          <img src="start.png" alt="Imagen mujer Beso Shop">
+        </div>
+      </div>
+    </section>
 
-<div class="slider">
-  <!-- Slide 1 -->
-  <section class="slide" style="background-image: url('start.png');">
-  </section>
+    <section>
+      <h1 style="font-size: 3.5rem; font-weight: 800; color: #2b002d; text-align: center;">ENVÍOS DISCRETOS Y SEGUROS</h1>
+      <div class="image-row">
+        <img src="img1.png" alt="Producto 1">
+        <img src="img2.png" alt="Producto 2">
+        <img src="img3.png" alt="Producto 3">
+      </div>
+      <p style="margin-top: 30px; font-size: 1.5rem; color: #2b002d; max-width: 800px; text-align: center;">
+        PRODUCTOS SELECCIONADOS PARA TU BIENESTAR Y DISFRUTE
+      </p>
+    </section>
 
-  <!-- Slide 2 -->
-  <section class="slide" style="background-image: url('next.png');">
-  </section>
+    <section>
+      <h1 style="font-size: 4rem; font-weight: 800; color: #2b002d; text-align: center;">¡GRACIAS POR SU ATENCIÓN!</h1>
+      <div class="footer-icons">
+        <a href="https://www.instagram.com/besosexshoparg" target="_blank">
+          <i class="fab fa-instagram"></i> besosexshoparg
+        </a>
+        <a href="https://www.sexshopbeso.com" target="_blank">
+          <i class="fas fa-globe"></i> www.sexshopbeso.com
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <!-- Slide 3 -->
-  <section class="slide" style="background-image: url('end.png');">
-  </section>
-</div>
+  <a href="https://www.sexshopbeso.com" target="_blank" class="fixed-button">¡Comprar en Beso Shop!</a>
 
-<!-- Botón Fijo (aparece en las 3 slides) -->
-<a href="https://www.sexshopbeso.com/" class="cta-fixed-button" target="_blank">
-  ¡Comprar en Beso Shop!
-</a>
+  <!-- API de Conversiones -->
+  <script>
+    const accessToken = "EAAQt50PoAd8BO7gJ81iFEdvMdrHQ7vrYBKGH1oYZBA4CQZCBNoVEY0ZBGJM0zBfRDo4DIiFsdvV6IXNAPUwAvscoBRFy3D4QhmZAW7oJSwbQUlfwBUxdOc1B3QMizHc75HCzNq9AH5ipQ6xoIn8CUj4LU4TWWIw4qesKDZA79JZAKXB76e0cQn9RJuQzqfntJ6IQZDZD";
+    const pixelId = "2379103259124147";
+    const conversionValue = 5.00;
+    const currency = "ARS";
 
-<!-- API de Conversiones -->
-<script>
-  const accessToken = "EAAQt50PoAd8BO7gJ81iFEdvMdrHQ7vrYBKGH1oYZBA4CQZCBNoVEY0ZBGJM0zBfRDo4DIiFsdvV6IXNAPUwAvscoBRFy3D4QhmZAW7oJSwbQUlfwBUxdOc1B3QMizHc75HCzNq9AH5ipQ6xoIn8CUj4LU4TWWIw4qesKDZA79JZAKXB76e0cQn9RJuQzqfntJ6IQZDZD";
-  const pixelId = "2379103259124147";
-  const conversionValue = 5.00;
-  const currency = "ARS";
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.querySelector('.fixed-button');
+      if (button) {
+        button.addEventListener('click', function () {
+          const eventos = ["Comprar", "Cliente potencial"];
+          const evento = eventos[Math.floor(Math.random() * eventos.length)];
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const button = document.querySelector('.cta-fixed-button');
-    if (button) {
-      button.addEventListener('click', function () {
-        const eventos = ["Comprar", "Cliente potencial"];
-        const evento = eventos[Math.floor(Math.random() * eventos.length)];
+          fbq('track', evento, {
+            content_name: 'Clic en botón Tienda',
+            content_category: 'Interacción'
+          });
 
-        fbq('track', evento, {
-          content_name: 'Clic en botón Tienda',
-          content_category: 'Interacción'
+          fetch(`https://graph.facebook.com/v18.0/${pixelId}/events`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              data: [{
+                event_name: evento,
+                event_time: Math.floor(Date.now() / 1000),
+                action_source: "website",
+                event_source_url: window.location.href,
+                user_data: {
+                  client_user_agent: navigator.userAgent
+                },
+                custom_data: {
+                  value: conversionValue,
+                  currency: currency
+                }
+              }],
+              access_token: accessToken
+            })
+          }).then(res => res.json())
+            .then(data => console.log("API Conversiones:", data))
+            .catch(err => console.error("Error en API:", err));
         });
-
-        fetch(`https://graph.facebook.com/v18.0/${pixelId}/events`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            data: [{
-              event_name: evento,
-              event_time: Math.floor(Date.now() / 1000),
-              action_source: "website",
-              event_source_url: window.location.href,
-              user_data: {
-                client_user_agent: navigator.userAgent
-              },
-              custom_data: {
-                value: conversionValue,
-                currency: currency
-              }
-            }],
-            access_token: accessToken
-          })
-        }).then(res => res.json())
-          .then(data => console.log("API Conversiones:", data))
-          .catch(err => console.error("Error en API:", err));
-      });
-    }
-  });
-</script>
-
+      }
+    });
+  </script>
 </body>
 </html>
