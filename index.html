@@ -24,6 +24,7 @@
     .slider {
       height: 100vh;
       scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
       overflow-y: scroll;
     }
 
@@ -43,6 +44,10 @@
       position: relative;
       z-index: 2;
       text-align: center;
+    }
+    .slide:last-child .slide-content {
+      margin-top: auto;
+      margin-bottom: 60px; /* Ajustá según lo que necesites */
     }
 
     .slide h1 {
